@@ -2,7 +2,7 @@
 title: Dodev
 description: 'Artificial Intelligence trends and concepts made easy.' # this means to ignore newlines until "baseurl:"
 permalink: ':title:output_ext'
-baseurl: "https://the-mvm.github.io/blog" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://the-mvm.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 logo: "/assets/img/branding/MVM-logo-full.svg"
 logo-icon: "/assets/img/branding/MVM-symbol.svg"
@@ -30,7 +30,7 @@ about-author: Engineer, industry executive, research enthusiast. Avid learner wi
 
 # Contact links
 email: hoechang1011@gmail.com # Add your Email address
-phone: # +82 10-3175-8146
+phone: #phone number
 website: https://hc-Ryu.github.io # Add your website
 linkedin: www.linkedin.com/in/hc-ryu # Add your Linkedin handle
 github: https://github.com/hc-Ryu # Add your Github handle
