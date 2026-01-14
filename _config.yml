@@ -29,11 +29,11 @@ author-pic: Myself_Neon_grey.jpg
 about-author: Engineer, industry executive, research enthusiast. Avid learner with diverse interests in coding, machine learning, artificial intelligence and reinforcement learning. 17+ years of experience working in multinational corporations.
 
 # Contact links
-email: hoechang1011@gmail.com # Add your Email address
+email: 'hoechang1011@gmail.com' # Add your Email address
 phone: #phone number
-website: https://hc-Ryu.github.io # Add your website
-linkedin: www.linkedin.com/in/hc-ryu # Add your Linkedin handle
-github: https://github.com/hc-Ryu # Add your Github handle
+website: 'https://hc-Ryu.github.io' # Add your website
+linkedin: 'www.linkedin.com/in/hc-ryu' # Add your Linkedin handle
+github: 'https://github.com/hc-Ryu' # Add your Github handle
 twitter: '@MvmThe' # Add your Twitter handle
 bandcamp: armandomaynez # Add your Bandcamp username
 stackoverflow: stackoverflow # Add your stackoverflow account
