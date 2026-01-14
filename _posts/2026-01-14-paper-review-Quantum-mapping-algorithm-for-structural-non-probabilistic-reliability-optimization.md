@@ -9,12 +9,17 @@ tags: [quantum computing, uncertainty quantification, reliablity based design op
 category: paper review
 author: Hoechang Ryu
 description: "As neural networks are used more and more in the creative process, text, images and even music are now created by AI, but who owns the copyright for those works?"
+mathjax: yes
+toc: yes
 ---
+
+[논문 읽기: Quantum mapping algorithm... (Springer)](https://link.springer.com/article/10.1007/s00158-025-04085-w){:target="_blank"}
+
 Title: Quantum mapping algorithm for structural non-probabilistic reliability optimization.
 
-Key words: Quantum mapping algorithm, Quantum genetic algorithms, $\mathbf{S}=4$,
+Key words: Quantum mapping algorithm · Quantum genetic algorithms · Structural reliability optimization · Non-probabilistic reliability · Multi-variable optimization
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tjzOzuKQhSM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Summary: 이 논문에서는 복잡한 항공기 구조물의 설계 최적화 과정에서 발생하는 막대한 계산 비용과 데이터 부족 문제를 해결하기 위해, 양자 컴퓨팅과 비확률적 신뢰성 이론을 결합한 새로운 알고리즘(QMA-NPRO)을 제안합니다. 설계 변수와 신뢰성 제약 조건을 양자(qubit) 상태에 매핑하여 penalty 함수 없이 제약 조건을 효율적으로 처리하고, 신뢰성 변위(Reliability Displacement) 개념을 도입해 최적화 탐색 성능을 높입니다. 특히 설계 변수와 신뢰성 제약 조건을 유전자 코드에 매핑한 양자 유전 알고리즘을 통해 목표인 설계변수 최적화와 신뢰성 기반 설계라는 두 가지 목표를 달성합니다. 트러스 및 극초음속 비행기 날개 설계에 적용한 결과, 기존 유전 알고리즘 대비 동일한 정확도로 연산 속도를 2.7배에서 8.5배까지 향상시켰습니다. 이를 통해 데이터가 부족한 환경에서도 효율적인 구조 최적화가 가능함을 입증하였습니다.
 
 The project was created by [Over the Bridge](https://overthebridge.org), an organization dedicated to increase awareness on mental health and substance abuse in the music industry, trying to denormalize and remove the glamour around such illnesses within the music community.
 
