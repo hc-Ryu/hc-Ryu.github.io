@@ -2,7 +2,7 @@
 layout: post
 read_time: true
 show_date: true
-title: "Quantum mapping algorithm for structural non-probabilistic reliability optimization"
+title: "Paper review: Quantum mapping algorithm for structural non-probabilistic reliability optimization"
 date: 2026-01-14
 img: posts/20260114/quantum-computing.jpg
 tags: [quantum computing, uncertainty quantification, reliablity based design optimization]
