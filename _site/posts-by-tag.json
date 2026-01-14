@@ -145,6 +145,16 @@
     
       
   {
+  "tag" : "quantum computing",
+  "posts" : [
+      
+      "./paper-review-Quantum-mapping-algorithm-for-structural-non-probabilistic-reliability-optimization.html"
+      
+    ]
+  } ,
+    
+      
+  {
   "tag" : "reinforcement learning",
   "posts" : [
       
@@ -155,10 +165,30 @@
     
       
   {
+  "tag" : "reliablity based design optimization",
+  "posts" : [
+      
+      "./paper-review-Quantum-mapping-algorithm-for-structural-non-probabilistic-reliability-optimization.html"
+      
+    ]
+  } ,
+    
+      
+  {
   "tag" : "thoughts",
   "posts" : [
       
       "./starting-the-adventure.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "uncertainty quantification",
+  "posts" : [
+      
+      "./paper-review-Quantum-mapping-algorithm-for-structural-non-probabilistic-reliability-optimization.html"
       
     ]
   } 
