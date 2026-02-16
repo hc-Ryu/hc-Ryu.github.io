@@ -15,7 +15,8 @@ toc: yes
 
 [논문 읽기: Quantum mapping algorithm... (Springer)](https://link.springer.com/article/10.1007/s00158-025-04085-w){:target="_blank"}
 
-Key words: Quantum Amplitude Estimation, <p style="text-align:center">\(<br>
+Key words: Quantum Amplitude Estimation — example values $x_1 = 1$, $x_2 = 2$, $x_3 = 3$ with weights $w_1 = 0.5$, $w_2 = 1$, $w_3 = -1$.
+<p style="text-align:center">\(<br>
 \begin{align}<br>
 \begin{split}<br>
 m_t &= \beta_1 m_{t-1} + (1 - \beta_1) g_t \\<br>
