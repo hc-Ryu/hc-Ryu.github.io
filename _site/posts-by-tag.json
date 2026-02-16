@@ -145,8 +145,20 @@
     
       
   {
+  "tag" : "quantum amplitude estimation",
+  "posts" : [
+      
+      "./qae2-cal-mean-and-var.html"
+      
+    ]
+  } ,
+    
+      
+  {
   "tag" : "quantum computing",
   "posts" : [
+      
+      "./qae2-cal-mean-and-var.html",
       
       "./paper-review-Quantum-mapping-algorithm-for-structural-non-probabilistic-reliability-optimization.html"
       
