@@ -6,7 +6,7 @@ title: "Paper review: Quantum mapping algorithm for structural non-probabilistic
 date: 2026-01-14
 img: posts/20260114/quantum-computing.jpg
 tags: [quantum computing, uncertainty quantification, reliablity based design optimization]
-category: paper review
+categories: [paper review]
 author: Hoechang Ryu
 description: "As neural networks are used more and more in the creative process, text, images and even music are now created by AI, but who owns the copyright for those works?"
 mathjax: yes

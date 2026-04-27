@@ -2,7 +2,7 @@
   
     {
       "title"       : "Quantum Amplitude Estimation 2; calculate mean and variance",
-      "category"    : "quantum information",
+      "category"    : "",
       "tags"        : "quantum computing, quantum amplitude estimation",
       "url"         : "./qae2-cal-mean-and-var.html",
       "date"        : "2026-02-16 00:00:00 +0900",
@@ -12,7 +12,7 @@
   
     {
       "title"       : "Paper review: Quantum mapping algorithm for structural non-probabilistic reliability optimization",
-      "category"    : "paper review",
+      "category"    : "",
       "tags"        : "quantum computing, uncertainty quantification, reliablity based design optimization",
       "url"         : "./paper-review-Quantum-mapping-algorithm-for-structural-non-probabilistic-reliability-optimization.html",
       "date"        : "2026-01-14 00:00:00 +0900",
@@ -22,7 +22,7 @@
   
     {
       "title"       : "Who owns the copyright for an AI generated creative work?",
-      "category"    : "opinion",
+      "category"    : "",
       "tags"        : "copyright, creativity, neural networks, machine learning, artificial intelligence",
       "url"         : "./AI-and-intellectual-property.html",
       "date"        : "2021-04-20 00:00:00 +0900",
@@ -32,7 +32,7 @@
   
     {
       "title"       : "So, what is a neural network?",
-      "category"    : "theory",
+      "category"    : "",
       "tags"        : "neural networks, machine learning, artificial intelligence",
       "url"         : "./back-to-basics.html",
       "date"        : "2021-04-02 00:00:00 +0900",

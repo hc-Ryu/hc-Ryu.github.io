@@ -1,0 +1,10 @@
+{% include calculate_relative_base.html %}
+{% include escape-404.html %}
+<div class="category-cloud">
+    <ul class="categories">
+        {% for item in (0..site.categories.size) %}{% unless forloop.last %}
+            {% capture this_word %}{{ category_words[item] | strip_newlines }}{% endcapture %}
+            <li><a href="{{ relativebase }}category.html?category={{ this_word | url_encode }}" class="category">{{ this_word }} <span>({{ site.categories[this_word].size }})</span></a></li>
+        {% endunless %}{% endfor %}
+    </ul>
+</div>
