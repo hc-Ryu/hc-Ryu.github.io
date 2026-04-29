@@ -128,9 +128,21 @@
 <link rel="apple-touch-icon" sizes="114x114" href="./assets/img/favicon/favicon.ico">
 	
 
-	<script type="text/javascript" async
-  		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	<!-- MathJax 3.x for better inline math support -->
+	<script>
+	  MathJax = {
+	    tex: {
+	      inlineMath: [['$', '$'], ['\\(', '\\)']],
+	      processEscapes: true,
+	      processEnvironments: true
+	    },
+	    loader: { load: ['[tex]/color'] },
+	    tex: { packages: { '[+]': ['color'] } }
+	  };
 	</script>
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 </head>
 
   <body>
@@ -259,7 +271,7 @@
             <li><a href="./category.html?category=paper+review" class="category">paper review <span>(1)</span></a></li>
         
             
-            <li><a href="./category.html?category=quantum+information" class="category">quantum information <span>(1)</span></a></li>
+            <li><a href="./category.html?category=quantum+information" class="category">quantum information <span>(2)</span></a></li>
         
             
             <li><a href="./category.html?category=theory" class="category">theory <span>(1)</span></a></li>
@@ -360,6 +372,42 @@
       <div class="list-group">
         <div class="list-group-title"><a id="quantum+information">quantum information</a></div>
         <div>
+          
+            
+
+            <div class="list-item">
+              <a href="./quantum-inspired-genetic-algorithm.html">Quantum Amplitude Estimation 2; calculate mean and variance</a>
+              
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2026-02-16T00:00:00+09:00">February 16, 2026</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        3 minute read
+      
+    </span>
+  
+  
+  </span>
+
+            </div>
           
             
 

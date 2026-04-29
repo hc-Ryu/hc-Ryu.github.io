@@ -2,7 +2,7 @@
   
     {
       "title"       : "Quantum Amplitude Estimation 2; calculate mean and variance",
-      "category"    : "",
+      "category"    : "quantum information",
       "tags"        : "quantum computing, quantum amplitude estimation",
       "url"         : "./quantum-inspired-genetic-algorithm.html",
       "date"        : "2026-02-16 00:00:00 +0900",
@@ -12,7 +12,7 @@
   
     {
       "title"       : "Quantum Amplitude Estimation 2; calculate mean and variance",
-      "category"    : "quantum information",
+      "category"    : "",
       "tags"        : "quantum computing, quantum amplitude estimation",
       "url"         : "./qae2-cal-mean-and-var.html",
       "date"        : "2026-02-16 00:00:00 +0900",

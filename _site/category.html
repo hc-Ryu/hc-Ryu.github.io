@@ -128,9 +128,21 @@
 <link rel="apple-touch-icon" sizes="114x114" href="./assets/img/favicon/favicon.ico">
 	
 
-	<script type="text/javascript" async
-  		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	<!-- MathJax 3.x for better inline math support -->
+	<script>
+	  MathJax = {
+	    tex: {
+	      inlineMath: [['$', '$'], ['\\(', '\\)']],
+	      processEscapes: true,
+	      processEnvironments: true
+	    },
+	    loader: { load: ['[tex]/color'] },
+	    tex: { packages: { '[+]': ['color'] } }
+	  };
 	</script>
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 </head>
 
   <body>
@@ -334,6 +346,40 @@
         <div class="archive">
             
                 <div class="post">
+                    <a href="/quantum-inspired-genetic-algorithm.html">Quantum Amplitude Estimation 2; calculate mean and variance</a>
+                    
+
+  <span class = "post-card-meta">
+  
+  
+    <span class="meta-pre"></span>
+  
+  
+    
+      
+      <span class="page_meta-date">
+        <time datetime="2026-02-16T00:00:00+09:00">February 16, 2026</time>
+      </span>
+    
+    
+      <span class="meta-sep"></span>
+    
+  
+  
+    
+    
+    <span class="page_meta-readtime">
+      
+        3 minute read
+      
+    </span>
+  
+  
+  </span>
+
+                </div>
+            
+                <div class="post">
                     <a href="/qae2-cal-mean-and-var.html">Quantum Amplitude Estimation 2; calculate mean and variance</a>
                     
 
@@ -412,6 +458,27 @@
         </div>
     </div>
 
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // 1. URL에서 '?category=이름' 파라미터 가져오기
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryName = urlParams.get('category');
+
+    if (categoryName) {
+      // 2. URL 인코딩된 문자를 디코딩하여 요소 찾기
+      const targetDiv = document.getElementById(decodeURIComponent(categoryName));
+
+      // 3. 해당 카테고리 div가 존재하면 hidden 클래스 제거
+      if (targetDiv) {
+        targetDiv.classList.remove('hidden');
+      } else {
+        // 만약 일치하는 카테고리가 없으면 안내 메시지 출력 (선택)
+        console.log("해당 카테고리를 찾을 수 없습니다: " + categoryName);
+      }
+    }
+  });
+</script>
   <div class="search-box">
   <div class="wrapper">
     <div class="search-grid">

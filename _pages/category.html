@@ -19,3 +19,24 @@ permalink: category:output_ext
         </div>
     </div>
 {% endunless %}{% endfor %}
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // 1. URL에서 '?category=이름' 파라미터 가져오기
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryName = urlParams.get('category');
+
+    if (categoryName) {
+      // 2. URL 인코딩된 문자를 디코딩하여 요소 찾기
+      const targetDiv = document.getElementById(decodeURIComponent(categoryName));
+
+      // 3. 해당 카테고리 div가 존재하면 hidden 클래스 제거
+      if (targetDiv) {
+        targetDiv.classList.remove('hidden');
+      } else {
+        // 만약 일치하는 카테고리가 없으면 안내 메시지 출력 (선택)
+        console.log("해당 카테고리를 찾을 수 없습니다: " + categoryName);
+      }
+    }
+  });
+</script>
