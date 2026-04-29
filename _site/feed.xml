@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-02-16T21:42:56+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Waymaker</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Hoechang Ryu</name></author><entry><title type="html">Quantum Amplitude Estimation 2; calculate mean and variance</title><link href="http://localhost:4000/qae2-cal-mean-and-var.html" rel="alternate" type="text/html" title="Quantum Amplitude Estimation 2; calculate mean and variance" /><published>2026-02-16T00:00:00+09:00</published><updated>2026-02-16T00:00:00+09:00</updated><id>http://localhost:4000/qae2-cal-mean-and-var</id><content type="html" xml:base="http://localhost:4000/qae2-cal-mean-and-var.html"><![CDATA[<p><a href="https://link.springer.com/article/10.1007/s00158-025-04085-w" target="_blank">논문 읽기: Quantum mapping algorithm… (Springer)</a></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4001/" rel="alternate" type="text/html" /><updated>2026-03-27T15:57:25+09:00</updated><id>http://localhost:4001/feed.xml</id><title type="html">Waymaker</title><subtitle>Artificial Intelligence trends and concepts made easy.</subtitle><author><name>Hoechang Ryu</name></author><entry><title type="html">Quantum Amplitude Estimation 2; calculate mean and variance</title><link href="http://localhost:4001/qae2-cal-mean-and-var.html" rel="alternate" type="text/html" title="Quantum Amplitude Estimation 2; calculate mean and variance" /><published>2026-02-16T00:00:00+09:00</published><updated>2026-02-16T00:00:00+09:00</updated><id>http://localhost:4001/qae2-cal-mean-and-var</id><content type="html" xml:base="http://localhost:4001/qae2-cal-mean-and-var.html"><![CDATA[<p><a href="https://link.springer.com/article/10.1007/s00158-025-04085-w" target="_blank">논문 읽기: Quantum mapping algorithm… (Springer)</a></p>
 
 <p>Key words: Quantum Amplitude Estimation — example values $x_1 = 1$, $x_2 = 2$, $x_3 = 3$ with weights $w_1 = 0.5$, $w_2 = 1$, $w_3 = -1$.</p>
 <p style="text-align:center">\(<br />
@@ -8,7 +8,36 @@ m_t &amp;= \beta_1 m_{t-1} + (1 - \beta_1) g_t \\<br />
 v_t &amp;= \beta_2 v_{t-1} + (1 - \beta_2) g_t^2<br />
 \end{split}<br />
 \end{align}<br />
-\)</p>]]></content><author><name>Hoechang Ryu</name></author><category term="quantum information" /><category term="quantum computing" /><category term="quantum amplitude estimation" /><summary type="html"><![CDATA[How to calculate mean and variance by quantum computing?]]></summary></entry><entry><title type="html">Paper review: Quantum mapping algorithm for structural non-probabilistic reliability optimization</title><link href="http://localhost:4000/paper-review-Quantum-mapping-algorithm-for-structural-non-probabilistic-reliability-optimization.html" rel="alternate" type="text/html" title="Paper review: Quantum mapping algorithm for structural non-probabilistic reliability optimization" /><published>2026-01-14T00:00:00+09:00</published><updated>2026-01-14T00:00:00+09:00</updated><id>http://localhost:4000/paper-review-Quantum-mapping-algorithm-for-structural-non-probabilistic-reliability-optimization</id><content type="html" xml:base="http://localhost:4000/paper-review-Quantum-mapping-algorithm-for-structural-non-probabilistic-reliability-optimization.html"><![CDATA[<p><a href="https://link.springer.com/article/10.1007/s00158-025-04085-w" target="_blank">논문 읽기: Quantum mapping algorithm… (Springer)</a></p>
+\)</p>]]></content><author><name>Hoechang Ryu</name></author><category term="quantum information" /><category term="quantum computing" /><category term="quantum amplitude estimation" /><summary type="html"><![CDATA[How to calculate mean and variance by quantum computing?]]></summary></entry><entry><title type="html">Quantum Amplitude Estimation 2; calculate mean and variance</title><link href="http://localhost:4001/quantum-inspired-genetic-algorithm.html" rel="alternate" type="text/html" title="Quantum Amplitude Estimation 2; calculate mean and variance" /><published>2026-02-16T00:00:00+09:00</published><updated>2026-02-16T00:00:00+09:00</updated><id>http://localhost:4001/quantum-inspired-genetic-algorithm</id><content type="html" xml:base="http://localhost:4001/quantum-inspired-genetic-algorithm.html"><![CDATA[<ol>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>단일 우주(Universe) 내부 아키텍처: QAOA 기반 국소 탐색각 우주는 세대(Generation)마다 고전 유전 알고리즘의 변이 연산을 수행한 후, QAOA(Quantum Approximate Optimization Algorithm) 회로를 통해 국소 해 공간(Local Solution Space)을 탐색합니다. 이 과정은 $N$차원 힐베르트 공간(Hilbert Space)에서 파동함수의 위상 평가와 간섭을 통해 이루어집니다.1.1. 도메인-월 인코딩 및 상태 준비 (State Preparation)고전 컴퓨터가 도출한 임의의 순회 경로(Tour) $\pi \in S_N$ (단, $S_N$은 대칭군)를 양자 상태로 매핑하기 위해 도메인-월(Domain-Wall) 인코딩을 적용합니다. 전체 경로를 특정 시점(예: $t = N/2$)을 기준으로 분할하여 두 개의 집합 $V_1$(전반부)과 $V_0$(후반부)로 정의합니다.각 도시 $i \in {1, \dots, N}$에 대응하는 큐비트 $q_i$의 초기 상태는 다음과 같이 정의됩니다.$$</td>
+          <td>\psi_0\rangle = \bigotimes_{i=1}^N</td>
+          <td>x_i\rangle, \quad \text{where} \; x_i = \begin{cases} 1 &amp; \text{if } i \in V_1 \ 0 &amp; \text{if } i \in V_0 \end{cases}$$이 과정은 초기 상태를 $</td>
+          <td>0\rangle^{\otimes N}$에서 시작하여 $x_i = 1$인 큐비트에 파울리 $X$ 게이트를 가함으로써 구현됩니다.1.2. 비용 해밀토니안 (Cost Hamiltonian, $H_C$)경로의 물리적 거리 행렬 $D$를 양자 위상(Phase)으로 변환하기 위해 다음과 같은 이징(Ising) 모델 형태의 비용 해밀토니안을 구성합니다.\(H_C = \sum_{i &lt; j}^{N} D_{ij} Z_i Z_j\)여기서 $Z$는 파울리 $Z$ 연산자입니다. 두 도시 $i, j$가 동일한 도메인에 속할 경우($</td>
+          <td>00\rangle$ 또는 $</td>
+          <td>11\rangle$), $Z_i Z_j = +I$가 되어 $D_{ij}$에 비례하는 양의 에너지 페널티를 받습니다.이에 따른 유니터리 시간 진전(Unitary Time Evolution) 연산자 $U_C(\gamma)$는 다음과 같습니다.\(U_C(\gamma) = e^{-i \gamma H_C} = \prod_{i &lt; j} R_{zz}(2\gamma D_{ij})_{i,j}\)이 연산은 상태의 관측 확률 진폭(Amplitude) 크기를 변화시키지 않고, 오직 거리에 비례하는 상대적 복소 위상(Relative Complex Phase) $\phi \propto \gamma D_{ij}$를 누적시킵니다. 거리가 먼 도시들이 같은 도메인에 잔류할수록 위상은 더 크게 회전합니다.1.3. 믹서 해밀토니안 (Mixer Hamiltonian, $H_M$)도메인 경계를 변형하여 새로운 해 공간을 탐색하기 위해, 파울리 $X$ 연산자로 구성된 믹서 해밀토니안을 가합니다.\(H_M = \sum_{k=1}^N X_k\)이에 대한 유니터리 연산자 $U_M(\beta)$는 각 큐비트에 $X$축 기준의 단일 큐비트 회전을 유도합니다.\(U_M(\beta) = e^{-i \beta H_M} = \prod_{k=1}^N R_x(2\beta)_k\)이 연산은 각 큐비트 상태를 $</td>
+          <td>x_k\rangle \rightarrow \cos(\beta)</td>
+          <td>x_k\rangle - i\sin(\beta)</td>
+          <td>\bar{x}<em>k\rangle$ 로 변환합니다. $U_C$에 의해 위상이 심하게 꼬인 상태(비효율적인 도메인 분할)는 $U_M$을 거치며 <strong>상쇄 간섭(Destructive Interference)</strong>을 일으켜 확률 진폭이 소멸합니다. 반면, 효율적인 도메인 분할 상태는 <strong>보강 간섭(Constructive Interference)</strong>을 통해 높은 확률 진폭을 갖게 됩니다.2. 다중 우주(Multi-Universe) 간섭 교차: $R</em>{XX}$ 얽힘 및 붕괴각 우주가 QAOA를 통해 국소 최적화된 도메인-월 비트스트링을 도출하면, 이를 다중 우주 간섭 회로의 초기 상태로 사용합니다. 이 과정은 이산적(Discrete) 고전 교차 연산을 양자 텐서 공간에서의 확률적 얽힘 연산으로 확장한 것입니다.2.1. 텐서 공간의 정의 및 상태 인코딩두 우주 $A$와 $B$에서 최적화된 $N$비트의 도메인 상태를 각각 $x^A, x^B \in {0, 1}^N$라 정의합니다. 초기 양자 상태는 두 우주의 텐서곱으로 표현됩니다.$$</td>
+          <td>\Psi_{init}\rangle =</td>
+          <td>x^A\rangle \otimes</td>
+          <td>x^B\rangle\(2.2. $R_{XX}$ 얽힘 연산자 (Entanglement Generation)상동 유전자(동일한 도시 인덱스 $k$) 간의 간섭을 유도하기 위해 쌍성(Pairwise) 얽힘 연산자인 $R_{XX}(\theta)$를 적용합니다. 이 유니터리 연산자는 파울리 $X \otimes X$ 연산자에 의해 정의됩니다.\)U_{cross}(\theta) = \prod_{k=1}^N \exp\left(-i \frac{\theta}{2} X_{A_k} X_{B_k}\right)$$파라미터 $\theta$ (일반적으로 $\pi/4$)는 유전자 교환의 확률적 가중치를 결정합니다. 임의의 인덱스 $k$에 대하여, 두 우주의 유전자 상태에 따른 유니터리 작용은 수학적으로 다음과 같이 전개됩니다.상태가 다를 경우 ($x^A_k \neq x^B_k$, 예: $</td>
+          <td>01\rangle$):$$R_{XX}(\theta)</td>
+          <td>01\rangle = \cos\left(\frac{\theta}{2}\right)</td>
+          <td>01\rangle - i\sin\left(\frac{\theta}{2}\right)</td>
+          <td>10\rangle$$이는 두 우주의 전략이 충돌할 때, $\sin^2(\theta/2)$의 확률로 두 상태가 치환(Swap)되는 중첩 상태를 형성합니다.상태가 같을 경우 ($x^A_k = x^B_k$, 예: $</td>
+          <td>00\rangle$):$$R_{XX}(\theta)</td>
+          <td>00\rangle = \cos\left(\frac{\theta}{2}\right)</td>
+          <td>00\rangle - i\sin\left(\frac{\theta}{2}\right)</td>
+          <td>11\rangle$$이는 전략이 일치할 때, 압도적 확률 $\cos^2(\theta/2)$로 결속을 유지하되, 미세한 확률로 동반 변이(Simultaneous Flip)를 유도합니다.2.3. 측정에 의한 파동함수 붕괴 (Wavefunction Collapse)계산 기저(Computational Basis)에서의 측정 연산자 $M_Z$를 적용하면, 중첩 상태의 파동함수가 붕괴하여 고전적 비트스트링 $z^A, z^B$를 출력합니다.이 측정 결과는 고전 알고리즘으로 회귀하여, 특정 인덱스 $k$에서 교차가 일어났는지(즉, $z^A_k = x^B_k$)를 판별하는 부울 논리(Boolean Logic)로 작용합니다. 양자 회로 내에서 얽힘을 거친 결과이므로, 도출된 비트스트링은 독립적인 난수 생성의 결과가 아니라 각 우주가 보유했던 거시적 도메인 블록의 특징이 확률 진폭의 간섭에 의해 비선형적으로 결합된 결과물입니다.2.4. 고전적 수리 연산자 (Deterministic Repair Operator)양자 측정값에 의해 유전자가 재조합된 결과는 순열의 제약 조건(모든 도시는 한 번씩만 방문)을 위배할 수 있습니다. 이를 복원하기 위해 투영 연산자(Projection Operator) 역할을 하는 고전적 그리디 수리 알고리즘 $R: {0, 1}^N \rightarrow S_N$을 적용하여, 위상 기하학적으로 유효한 최종 해밀토니안 사이클(Hamiltonian Cycle)로 매핑함으로써 한 세대의 아키텍처 루프를 종료합니다.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ol>]]></content><author><name>Hoechang Ryu</name></author><category term="quantum information" /><category term="quantum computing" /><category term="quantum amplitude estimation" /><summary type="html"><![CDATA[How to calculate mean and variance by quantum computing?]]></summary></entry><entry><title type="html">Paper review: Quantum mapping algorithm for structural non-probabilistic reliability optimization</title><link href="http://localhost:4001/paper-review-Quantum-mapping-algorithm-for-structural-non-probabilistic-reliability-optimization.html" rel="alternate" type="text/html" title="Paper review: Quantum mapping algorithm for structural non-probabilistic reliability optimization" /><published>2026-01-14T00:00:00+09:00</published><updated>2026-01-14T00:00:00+09:00</updated><id>http://localhost:4001/paper-review-Quantum-mapping-algorithm-for-structural-non-probabilistic-reliability-optimization</id><content type="html" xml:base="http://localhost:4001/paper-review-Quantum-mapping-algorithm-for-structural-non-probabilistic-reliability-optimization.html"><![CDATA[<p><a href="https://link.springer.com/article/10.1007/s00158-025-04085-w" target="_blank">논문 읽기: Quantum mapping algorithm… (Springer)</a></p>
 
 <p>Title: Quantum mapping algorithm for structural non-probabilistic reliability optimization.</p>
 
@@ -43,7 +72,7 @@ v_t &amp;= \beta_2 v_{t-1} + (1 - \beta_2) g_t^2<br />
 <tweet>Perhaps a new model for remunerating creative work can be established, one that does not require commercial success to be necessary for artists to make a living.</tweet>
 
 <p><img src="./assets/img/posts/20210420/post8-rembrandt2.jpg" alt="The next Rembrandt" />
-<small><a href="https://www.jwt.com/en/work/thenextrembrandt">The Next Rembrandt</a> is a computer-generated 3-D–printed painting developed by a facial-recognition algorithm that scanned data from 346 known paintings by the Dutch painter in a process lasting 18 months. The portrait is based on 168,263 fragments from Rembrandt’s works.</small></p>]]></content><author><name>Hoechang Ryu</name></author><category term="paper review" /><category term="quantum computing" /><category term="uncertainty quantification" /><category term="reliablity based design optimization" /><summary type="html"><![CDATA[As neural networks are used more and more in the creative process, text, images and even music are now created by AI, but who owns the copyright for those works?]]></summary></entry><entry><title type="html">Who owns the copyright for an AI generated creative work?</title><link href="http://localhost:4000/AI-and-intellectual-property.html" rel="alternate" type="text/html" title="Who owns the copyright for an AI generated creative work?" /><published>2021-04-20T00:00:00+09:00</published><updated>2021-04-20T00:00:00+09:00</updated><id>http://localhost:4000/AI-and-intellectual-property</id><content type="html" xml:base="http://localhost:4000/AI-and-intellectual-property.html"><![CDATA[<p>Recently I was <a href="https://www.rollingstone.com/music/music-features/nirvana-kurt-cobain-ai-song-1146444/">reading an article</a> about a cool project that intends to have a neural network create songs of the late club of the 27 (artists that have tragically died at age 27 or near, and in the height of their respective careers), artists such as Amy Winehouse, Jimmy Hendrix, Curt Cobain and Jim Morrison.</p>
+<small><a href="https://www.jwt.com/en/work/thenextrembrandt">The Next Rembrandt</a> is a computer-generated 3-D–printed painting developed by a facial-recognition algorithm that scanned data from 346 known paintings by the Dutch painter in a process lasting 18 months. The portrait is based on 168,263 fragments from Rembrandt’s works.</small></p>]]></content><author><name>Hoechang Ryu</name></author><category term="paper review" /><category term="quantum computing" /><category term="uncertainty quantification" /><category term="reliablity based design optimization" /><summary type="html"><![CDATA[As neural networks are used more and more in the creative process, text, images and even music are now created by AI, but who owns the copyright for those works?]]></summary></entry><entry><title type="html">Who owns the copyright for an AI generated creative work?</title><link href="http://localhost:4001/AI-and-intellectual-property.html" rel="alternate" type="text/html" title="Who owns the copyright for an AI generated creative work?" /><published>2021-04-20T00:00:00+09:00</published><updated>2021-04-20T00:00:00+09:00</updated><id>http://localhost:4001/AI-and-intellectual-property</id><content type="html" xml:base="http://localhost:4001/AI-and-intellectual-property.html"><![CDATA[<p>Recently I was <a href="https://www.rollingstone.com/music/music-features/nirvana-kurt-cobain-ai-song-1146444/">reading an article</a> about a cool project that intends to have a neural network create songs of the late club of the 27 (artists that have tragically died at age 27 or near, and in the height of their respective careers), artists such as Amy Winehouse, Jimmy Hendrix, Curt Cobain and Jim Morrison.</p>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/tjzOzuKQhSM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
@@ -74,7 +103,7 @@ v_t &amp;= \beta_2 v_{t-1} + (1 - \beta_2) g_t^2<br />
 <tweet>Perhaps a new model for remunerating creative work can be established, one that does not require commercial success to be necessary for artists to make a living.</tweet>
 
 <p><img src="./assets/img/posts/20210420/post8-rembrandt2.jpg" alt="The next Rembrandt" />
-<small><a href="https://www.jwt.com/en/work/thenextrembrandt">The Next Rembrandt</a> is a computer-generated 3-D–printed painting developed by a facial-recognition algorithm that scanned data from 346 known paintings by the Dutch painter in a process lasting 18 months. The portrait is based on 168,263 fragments from Rembrandt’s works.</small></p>]]></content><author><name>Armando Maynez</name></author><category term="opinion" /><category term="copyright" /><category term="creativity" /><category term="neural networks" /><category term="machine learning" /><category term="artificial intelligence" /><summary type="html"><![CDATA[As neural networks are used more and more in the creative process, text, images and even music are now created by AI, but who owns the copyright for those works?]]></summary></entry><entry><title type="html">So, what is a neural network?</title><link href="http://localhost:4000/back-to-basics.html" rel="alternate" type="text/html" title="So, what is a neural network?" /><published>2021-04-02T00:00:00+09:00</published><updated>2021-04-02T00:00:00+09:00</updated><id>http://localhost:4000/back-to-basics</id><content type="html" xml:base="http://localhost:4000/back-to-basics.html"><![CDATA[<p>The omnipresence of technology nowadays has made it commonplace to read news about AI, just a quick glance at today’s headlines, and I get:</p>
+<small><a href="https://www.jwt.com/en/work/thenextrembrandt">The Next Rembrandt</a> is a computer-generated 3-D–printed painting developed by a facial-recognition algorithm that scanned data from 346 known paintings by the Dutch painter in a process lasting 18 months. The portrait is based on 168,263 fragments from Rembrandt’s works.</small></p>]]></content><author><name>Armando Maynez</name></author><category term="opinion" /><category term="copyright" /><category term="creativity" /><category term="neural networks" /><category term="machine learning" /><category term="artificial intelligence" /><summary type="html"><![CDATA[As neural networks are used more and more in the creative process, text, images and even music are now created by AI, but who owns the copyright for those works?]]></summary></entry><entry><title type="html">So, what is a neural network?</title><link href="http://localhost:4001/back-to-basics.html" rel="alternate" type="text/html" title="So, what is a neural network?" /><published>2021-04-02T00:00:00+09:00</published><updated>2021-04-02T00:00:00+09:00</updated><id>http://localhost:4001/back-to-basics</id><content type="html" xml:base="http://localhost:4001/back-to-basics.html"><![CDATA[<p>The omnipresence of technology nowadays has made it commonplace to read news about AI, just a quick glance at today’s headlines, and I get:</p>
 <ul>
   <li><a href="https://www.morningbrew.com/emerging-tech/stories/2021/03/29/one-biggest-advancements-ai-also-sparked-fierce-debate-heres?utm_source=morning_brew">This Powerful AI Technique Led to Clashes at Google and Fierce Debate in Tech.</a></li>
   <li><a href="https://fortune.com/2021/04/02/ai-forecasting-supply-chain-factories-caterpillar-agco/">How A.I.-powered companies dodged the worst damage from COVID</a></li>
@@ -179,7 +208,7 @@ v_t &amp;= \beta_2 v_{t-1} + (1 - \beta_2) g_t^2<br />
 
 <p>Of course Amazon’s Alexa neural networks have undergone quite a lot of training to get to the level where they are, the beauty is that once trained, to perform their magic they just need a few mathematical operations.</p>
 
-<p>As said before, I will continue to write about the basics of neural networks, the next article in the series will dive a bit deeper into the math behind a basic neural network.</p>]]></content><author><name>Armando Maynez</name></author><category term="theory" /><category term="neural networks" /><category term="machine learning" /><category term="artificial intelligence" /><summary type="html"><![CDATA[ELI5: what is a neural network.]]></summary></entry><entry><title type="html">Starting the adventure</title><link href="http://localhost:4000/starting-the-adventure.html" rel="alternate" type="text/html" title="Starting the adventure" /><published>2021-03-24T00:00:00+09:00</published><updated>2021-03-24T00:00:00+09:00</updated><id>http://localhost:4000/starting-the-adventure</id><content type="html" xml:base="http://localhost:4000/starting-the-adventure.html"><![CDATA[<p>In the midst of a global pandemic caused by the SARS-COV2 coronavirus; I decided to start blogging. I wanted to blog since a long time, I have always enjoyed writing, but many unknowns and having “no time” for it prevented me from taking it up. Things like: “I don’t really know who my target audience is”, “what would my topic or topics be?”, “I don’t think I am a world-class expert in anything”, and many more kept stopping me from setting up my own blog. Now seemed like a good time as any so with those and tons of other questions in my mind I decided it was time to start.</p>
+<p>As said before, I will continue to write about the basics of neural networks, the next article in the series will dive a bit deeper into the math behind a basic neural network.</p>]]></content><author><name>Armando Maynez</name></author><category term="theory" /><category term="neural networks" /><category term="machine learning" /><category term="artificial intelligence" /><summary type="html"><![CDATA[ELI5: what is a neural network.]]></summary></entry><entry><title type="html">Starting the adventure</title><link href="http://localhost:4001/starting-the-adventure.html" rel="alternate" type="text/html" title="Starting the adventure" /><published>2021-03-24T00:00:00+09:00</published><updated>2021-03-24T00:00:00+09:00</updated><id>http://localhost:4001/starting-the-adventure</id><content type="html" xml:base="http://localhost:4001/starting-the-adventure.html"><![CDATA[<p>In the midst of a global pandemic caused by the SARS-COV2 coronavirus; I decided to start blogging. I wanted to blog since a long time, I have always enjoyed writing, but many unknowns and having “no time” for it prevented me from taking it up. Things like: “I don’t really know who my target audience is”, “what would my topic or topics be?”, “I don’t think I am a world-class expert in anything”, and many more kept stopping me from setting up my own blog. Now seemed like a good time as any so with those and tons of other questions in my mind I decided it was time to start.</p>
 
 <p>Funnily, this is not my first post. The birth of the blog came very natural as a way to “document” my newly established pursuit for getting myself into Machine Learning. This new adventure of mine comprises several things, and if I want to succeed I need to be serious about them all:</p>
 <ul>
@@ -320,7 +349,7 @@ v_t &amp;= \beta_2 v_{t-1} + (1 - \beta_2) g_t^2<br />
 
 <p>But this fix did not work for the search function, because it relies on a <code class="language-plaintext highlighter-rouge">search.json</code> file (also generated programmatically to be served as a static file), therefore when generating this file one either use the relative path for the <code class="language-plaintext highlighter-rouge">root</code> directory or for a nested directory, thus the search results will only link correctly the corresponding pages if the page where the user searched for something is in the corresponding scope.</p>
 
-<p>So the final solution was to make the whole site flat, meaning to live in a single directory. All pages and posts will live under the root directory, and by doing so, I can control how to address the relative paths for resources.</p>]]></content><author><name>Armando Maynez</name></author><category term="general blogging" /><category term="thoughts" /><category term="life" /><summary type="html"><![CDATA[Midlife career change: a disaster or an opportunity?]]></summary></entry><entry><title type="html">Deep Q Learning for Tic Tac Toe</title><link href="http://localhost:4000/deep-q-learning-tic-tac-toe.html" rel="alternate" type="text/html" title="Deep Q Learning for Tic Tac Toe" /><published>2021-03-19T06:14:20+09:00</published><updated>2021-03-19T06:14:20+09:00</updated><id>http://localhost:4000/deep-q-learning-tic-tac-toe</id><content type="html" xml:base="http://localhost:4000/deep-q-learning-tic-tac-toe.html"><![CDATA[<center><img style="float: left;margin-right: 1em;" src="./assets/img/posts/20210318/Game_Screen.png" width="310" height="300" /></center>
+<p>So the final solution was to make the whole site flat, meaning to live in a single directory. All pages and posts will live under the root directory, and by doing so, I can control how to address the relative paths for resources.</p>]]></content><author><name>Armando Maynez</name></author><category term="general blogging" /><category term="thoughts" /><category term="life" /><summary type="html"><![CDATA[Midlife career change: a disaster or an opportunity?]]></summary></entry><entry><title type="html">Deep Q Learning for Tic Tac Toe</title><link href="http://localhost:4001/deep-q-learning-tic-tac-toe.html" rel="alternate" type="text/html" title="Deep Q Learning for Tic Tac Toe" /><published>2021-03-19T06:14:20+09:00</published><updated>2021-03-19T06:14:20+09:00</updated><id>http://localhost:4001/deep-q-learning-tic-tac-toe</id><content type="html" xml:base="http://localhost:4001/deep-q-learning-tic-tac-toe.html"><![CDATA[<center><img style="float: left;margin-right: 1em;" src="./assets/img/posts/20210318/Game_Screen.png" width="310" height="300" /></center>
 
 <h2 id="background">Background</h2>
 <p>After many years of a corporate career (17) diverging from computer science, I have now decided to learn Machine Learning and in the process return to coding (something I have always loved!).</p>
@@ -564,7 +593,7 @@ Wins: 52.66% Losses: 36.02% Ties: 11.32%</small></center>
 
 <p>As of today, my best result so far is 87.5%, I will leave it rest for a while and keep investigating to find a reason for not being able to reach at least 90%. I read about <a href="https://medium.com/applied-data-science/how-to-train-ai-agents-to-play-multiplayer-games-using-self-play-deep-reinforcement-learning-247d0b440717">self play</a>, and it looks like a viable option to test and a fun coding challenge. However, before embarking in yet another big change I want to ensure I have been thorough with the model and have tested every option correctly.</p>
 
-<p>I feel the end is near… should I continue to update this post as new events unfold or shall I make it a multi post thread?</p>]]></content><author><name>Armando Maynez</name></author><category term="machine learning" /><category term="artificial intelligence" /><category term="reinforcement learning" /><category term="coding" /><category term="python" /><summary type="html"><![CDATA[Inspired by Deep Mind's astonishing feats of having their Alpha Go, Alpha Zero and Alpha Star programs learn (and be amazing at it) Go, Chess, Atari games and lately Starcraft; I set myself to the task of programming a neural network that will learn by itself how to play the ancient game of tic tac toe. How hard could it be?]]></summary></entry><entry><title type="html">Neural Network Optimization Methods and Algorithms</title><link href="http://localhost:4000/neural-network-optimization-methods.html" rel="alternate" type="text/html" title="Neural Network Optimization Methods and Algorithms" /><published>2021-03-13T04:32:20+09:00</published><updated>2021-03-13T04:32:20+09:00</updated><id>http://localhost:4000/neural-network-optimization-methods</id><content type="html" xml:base="http://localhost:4000/neural-network-optimization-methods.html"><![CDATA[<p>For the seemingly small project I undertook of <a href="./deep-q-learning-tic-tac-toe.html">creating a machine learning neural network that could learn by itself to play tic-tac-toe</a>, I bumped into the necesity of implementing at least one momentum algorithm for the optimization of the network during backpropagation.</p>
+<p>I feel the end is near… should I continue to update this post as new events unfold or shall I make it a multi post thread?</p>]]></content><author><name>Armando Maynez</name></author><category term="machine learning" /><category term="artificial intelligence" /><category term="reinforcement learning" /><category term="coding" /><category term="python" /><summary type="html"><![CDATA[Inspired by Deep Mind's astonishing feats of having their Alpha Go, Alpha Zero and Alpha Star programs learn (and be amazing at it) Go, Chess, Atari games and lately Starcraft; I set myself to the task of programming a neural network that will learn by itself how to play the ancient game of tic tac toe. How hard could it be?]]></summary></entry><entry><title type="html">Neural Network Optimization Methods and Algorithms</title><link href="http://localhost:4001/neural-network-optimization-methods.html" rel="alternate" type="text/html" title="Neural Network Optimization Methods and Algorithms" /><published>2021-03-13T04:32:20+09:00</published><updated>2021-03-13T04:32:20+09:00</updated><id>http://localhost:4001/neural-network-optimization-methods</id><content type="html" xml:base="http://localhost:4001/neural-network-optimization-methods.html"><![CDATA[<p>For the seemingly small project I undertook of <a href="./deep-q-learning-tic-tac-toe.html">creating a machine learning neural network that could learn by itself to play tic-tac-toe</a>, I bumped into the necesity of implementing at least one momentum algorithm for the optimization of the network during backpropagation.</p>
 
 <p>And since my original post for the TicTacToe project is quite large already, I decided to post separately these optimization methods and how did I implement them in my code.</p>
 
@@ -880,7 +909,7 @@ E[\theta^2]_t &amp;= \beta_1 E[\theta^2]_{t-1} + (1-\beta_1) \theta^2_t \\<br />
                             <span class="o">+</span> <span class="n">c</span><span class="p">.</span><span class="n">EPSILON</span><span class="p">))))</span>
 
     <span class="n">self</span><span class="p">.</span><span class="nf">gradient_zeros</span><span class="p">()</span>
-</code></pre></div></div>]]></content><author><name>Armando Maynez</name></author><category term="coding" /><category term="machine learning" /><category term="optimization" /><category term="deep Neural networks" /><summary type="html"><![CDATA[Some neural network optimization algorithms mostly to implement momentum when doing back propagation.]]></summary></entry><entry><title type="html">Machine Learning Library in Python from scratch</title><link href="http://localhost:4000/ML-Library-from-scratch.html" rel="alternate" type="text/html" title="Machine Learning Library in Python from scratch" /><published>2021-03-01T03:32:20+09:00</published><updated>2021-03-01T03:32:20+09:00</updated><id>http://localhost:4000/ML-Library-from-scratch</id><content type="html" xml:base="http://localhost:4000/ML-Library-from-scratch.html"><![CDATA[<p>It must sound crazy that in this day and age, when we have such a myriad of amazing machine learning libraries and toolkits all open sourced, all quite well documented and easy to use, I decided to create my own ML library from scratch.</p>
+</code></pre></div></div>]]></content><author><name>Armando Maynez</name></author><category term="coding" /><category term="machine learning" /><category term="optimization" /><category term="deep Neural networks" /><summary type="html"><![CDATA[Some neural network optimization algorithms mostly to implement momentum when doing back propagation.]]></summary></entry><entry><title type="html">Machine Learning Library in Python from scratch</title><link href="http://localhost:4001/ML-Library-from-scratch.html" rel="alternate" type="text/html" title="Machine Learning Library in Python from scratch" /><published>2021-03-01T03:32:20+09:00</published><updated>2021-03-01T03:32:20+09:00</updated><id>http://localhost:4001/ML-Library-from-scratch</id><content type="html" xml:base="http://localhost:4001/ML-Library-from-scratch.html"><![CDATA[<p>It must sound crazy that in this day and age, when we have such a myriad of amazing machine learning libraries and toolkits all open sourced, all quite well documented and easy to use, I decided to create my own ML library from scratch.</p>
 <center><img src="./assets/img/posts/20210228/ML_cloud.jpg" width="480px" /></center>
 <p>Let me try to explain; I am in the process of immersing myself into the world of Machine Learning, and to do so, I want to deeply understand the basic concepts and its foundations, and I think that there is no better way to do so than by creating myself all the code for a basic neural network library from scratch. This way I can gain in depth understanding of the math that underpins the ML algorithms.</p>
 
@@ -7841,7 +7870,7 @@ qXRvbwAAAB1kYXRhAAAAAQAAAABMYXZmNTguNDUuMTAw
   <li>save and load trained model to file</li>
 </ul>
 
-<p>I will get to it soon…</p>]]></content><author><name>Armando Maynez</name></author><category term="machine learning" /><category term="coding" /><category term="neural networks" /><category term="python" /><summary type="html"><![CDATA[Single neuron perceptron that classifies elements learning quite quickly.]]></summary></entry><entry><title type="html">Conway’s Game of Life</title><link href="http://localhost:4000/conways-game-of-life.html" rel="alternate" type="text/html" title="Conway’s Game of Life" /><published>2021-02-11T04:32:20+09:00</published><updated>2021-02-11T04:32:20+09:00</updated><id>http://localhost:4000/conways-game-of-life</id><content type="html" xml:base="http://localhost:4000/conways-game-of-life.html"><![CDATA[<p>I&nbsp;am lately trying to take on coding again. It had always been a part of my life since my early years when I&nbsp;learned to program a Tandy Color Computer at the age of 8, the good old days.</p>
+<p>I will get to it soon…</p>]]></content><author><name>Armando Maynez</name></author><category term="machine learning" /><category term="coding" /><category term="neural networks" /><category term="python" /><summary type="html"><![CDATA[Single neuron perceptron that classifies elements learning quite quickly.]]></summary></entry><entry><title type="html">Conway’s Game of Life</title><link href="http://localhost:4001/conways-game-of-life.html" rel="alternate" type="text/html" title="Conway’s Game of Life" /><published>2021-02-11T04:32:20+09:00</published><updated>2021-02-11T04:32:20+09:00</updated><id>http://localhost:4001/conways-game-of-life</id><content type="html" xml:base="http://localhost:4001/conways-game-of-life.html"><![CDATA[<p>I&nbsp;am lately trying to take on coding again. It had always been a part of my life since my early years when I&nbsp;learned to program a Tandy Color Computer at the age of 8, the good old days.</p>
 
 <p><img src="./assets/img/posts/20210210/300px-TRS-80_Color_Computer_3.jpg" alt="Tandy Color Computer TRS80 III" /><small>Tandy Color Computer TRS80 III</small></p>
 
@@ -7908,123 +7937,4 @@ qXRvbwAAAB1kYXRhAAAAAQAAAABMYXZmNTguNDUuMTAw
 
 <p>Notice that since I am keeping an array of the coordinates of only the cells who are alive, I could apply just 3 rules, die of loneliness, die of overpopulation and become alive from reproduction (exactly 3 alive neighbors) because the ones who have 2 or 3 neighbors and are already alive, can remain alive in the next iteration.</p>
 
-<p>I&nbsp;found it very interesting to implement the Game of Life like this, it was quite a refreshing challenge and I am beginning to feel my coding skills ramping up again.</p>]]></content><author><name>Armando Maynez</name></author><category term="coding" /><category term="python" /><summary type="html"><![CDATA[Taking on the challenge of picking up coding again through interesting small projects, this time it is the turn of Conway's Game of Life.]]></summary></entry><entry><title type="html">Single Neuron Perceptron</title><link href="http://localhost:4000/single-neuron-perceptron.html" rel="alternate" type="text/html" title="Single Neuron Perceptron" /><published>2021-01-26T04:32:20+09:00</published><updated>2021-01-26T04:32:20+09:00</updated><id>http://localhost:4000/single-neuron-perceptron</id><content type="html" xml:base="http://localhost:4000/single-neuron-perceptron.html"><![CDATA[<p>As an entry point to learning python and getting into Machine Learning, I decided to code from scratch the Hello World! of the field, a single neuron perceptron.</p>
-
-<h2 id="what-is-a-perceptron">What is a perceptron?</h2>
-
-<p>A perceptron is the basic building block of a neural network, it can be compared to a neuron, And its conception is what detonated the vast field of Artificial Intelligence nowadays.</p>
-
-<p>Back in the late 1950’s, a young <a href="https://en.wikipedia.org/wiki/Frank_Rosenblatt">Frank Rosenblatt</a> devised a very simple algorithm as a foundation to construct a machine that could learn to perform different tasks.</p>
-
-<p>In its essence, a perceptron is nothing more than a collection of values and rules for passing information through them, but in its simplicity lies its power.</p>
-
-<center><img src="./assets/img/posts/20210125/Perceptron.png" /></center>
-
-<p>Imagine you have a ‘neuron’ and to ‘activate’ it, you pass through several input signals, each signal connects to the neuron through a synapse, once the signal is aggregated in the perceptron, it is then passed on to one or as many outputs as defined. A perceptron is but a neuron and its collection of synapses to get a signal into it and to modify a signal to pass on.</p>
-
-<p>In more mathematical terms, a perceptron is an array of values (let’s call them weights), and the rules to apply such values to an input signal.</p>
-
-<p>For instance a perceptron could get 3 different inputs as in the image, lets pretend that the inputs it receives as signal are: $x_1 = 1, \; x_2 = 2\; and \; x_3 = 3$, if it’s weights are $w_1 = 0.5,\; w_2 = 1\; and \; w_3 = -1$ respectively, then what the perceptron will do when the signal is received is to multiply each input value by its corresponding weight, then add them up.</p>
-
-<p style="text-align:center">\(<br />
-\begin{align}
-\begin{split}
-\left(x_1 * w_1\right) + \left(x_2 * w_2\right) + \left(x_3 * w_3\right)
-\end{split}
-\end{align}
-\)</p>
-
-<p style="text-align:center">\(<br />
-\begin{align}<br />
-\begin{split}<br />
-\left(0.5 * 1\right) + \left(1 * 2\right) + \left(-1 * 3\right) = 0.5 + 2 - 3 = -0.5
-\end{split}<br />
-\end{align}<br />
-\)</p>
-
-<p>Typically when this value is obtained, we need to apply an “activation” function to smooth the output, but let’s say that our activation function is linear, meaning that we keep the value as it is, then that’s it, that is the output of the perceptron, -0.5.</p>
-
-<p>In a practical application, the output means something, perhaps we want our perceptron to classify a set of data and if the perceptron outputs a negative number, then we know the data is of type A, and if it is a positive number then it is of type B.</p>
-
-<p>Once we understand this, the magic starts to happen through a process called backpropagation, where we “educate” our tiny one neuron brain to have it learn how to do its job.</p>
-
-<tweet>The magic starts to happen through a process called backpropagation, where we "educate" our tiny one neuron brain to have it learn how to do its job.</tweet>
-
-<p>For this we need a set of data that it is already classified, we call this a training set. This data has inputs and their corresponding correct output. So we can tell the little brain when it misses in its prediction, and by doing so, we also adjust the weights a bit in the direction where we know the perceptron committed the mistake hoping that after many iterations like this the weights will be so that most of the predictions will be correct.</p>
-
-<p>After the model trains successfully we can have it classify data it has never seen before, and we have a fairly high confidence that it will do so correctly.</p>
-
-<p>The math behind this magical property of the perceptron is called gradient descent, and is just a bit of differential calculus that helps us convert the error the brain is having into tiny nudges of value of the weights towards their optimum. <a href="https://www.youtube.com/watch?v=aircAruvnKk&amp;list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi">This video series by 3 blue 1 brown explains it wonderfuly.</a></p>
-
-<p>My program creates a single neuron neural network tuned to guess if a point is above or below a randomly generated line and generates a visualization based on graphs to see how the neural network is learning through time.</p>
-
-<p>The neuron has 3 inputs and weights to calculate its output:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>input 1 is the X coordinate of the point,
-Input 2 is the y coordinate of the point,
-Input 3 is the bias and it is always 1
-
-Input 3 or the bias is required for lines that do not cross the origin (0,0)
-</code></pre></div></div>
-
-<p>The Perceptron starts with weights all set to zero and learns by using 1,000 random points per each iteration.</p>
-
-<p>The output of the perceptron is calculated with the following activation function:
-    if x * weight_x + y weight_y + weight_bias is positive then 1 else 0</p>
-
-<p>The error for each point is calculated as the expected outcome of the perceptron minus the real outcome therefore there are only 3 possible error values:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">Expected</th>
-      <th style="text-align: center">Calculated</th>
-      <th style="text-align: center">Error</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center">1</td>
-      <td style="text-align: center">-1</td>
-      <td style="text-align: center">1</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">1</td>
-      <td style="text-align: center">1</td>
-      <td style="text-align: center">0</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">-1</td>
-      <td style="text-align: center">-1</td>
-      <td style="text-align: center">0</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">-1</td>
-      <td style="text-align: center">1</td>
-      <td style="text-align: center">-1</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>With every point that is learned if the error is not 0 the weights are adjusted according to:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>New_weight = Old_weight + error * input * learning_rate
-for example: New_weight_x = Old_weight_x + error * x * learning rate
-</code></pre></div></div>
-
-<p>A very useful parameter in all of neural networks is teh learning rate, which is basically a measure on how tiny our nudge to the weights is going to be.</p>
-
-<p>In this particular case, I coded the learning_rate to decrease with every iteration as follows:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>learning_rate = 0.01 / (iteration + 1)
-</code></pre></div></div>
-
-<p>this is important to ensure that once the weights are nearing the optimal values the adjustment in each iteration is subsequently more subtle.</p>
-
-<center><img src="./assets/img/posts/20210125/Learning_1000_points_per_iteration.jpg" /></center>
-
-<p>In the end, the perceptron always converges into a solution and finds with great precision the line we are looking for.</p>
-
-<p>Perceptrons are quite a revelation in that they can resolve equations by learning, however they are very limited. By their nature they can only resolve linear equations, so their problem space is quite narrow.</p>
-
-<p>Nowadays the neural networks consist of combinations of many perceptrons, in many layers, and other types of “neurons”, like convolution, recurrent, etc. increasing significantly the types of problems they solve.</p>]]></content><author><name>Armando Maynez</name></author><category term="machine learning" /><category term="coding" /><category term="neural networks" /><summary type="html"><![CDATA[Single neuron perceptron that classifies elements learning quite quickly.]]></summary></entry></feed>
+<p>I&nbsp;found it very interesting to implement the Game of Life like this, it was quite a refreshing challenge and I am beginning to feel my coding skills ramping up again.</p>]]></content><author><name>Armando Maynez</name></author><category term="coding" /><category term="python" /><summary type="html"><![CDATA[Taking on the challenge of picking up coding again through interesting small projects, this time it is the turn of Conway's Game of Life.]]></summary></entry></feed>

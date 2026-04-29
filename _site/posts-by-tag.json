@@ -148,6 +148,8 @@
   "tag" : "quantum amplitude estimation",
   "posts" : [
       
+      "./quantum-inspired-genetic-algorithm.html",
+      
       "./qae2-cal-mean-and-var.html"
       
     ]
@@ -157,6 +159,8 @@
   {
   "tag" : "quantum computing",
   "posts" : [
+      
+      "./quantum-inspired-genetic-algorithm.html",
       
       "./qae2-cal-mean-and-var.html",
       
