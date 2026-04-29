@@ -49,6 +49,7 @@ fbadmin: ar.maybach
 paginate: 6
 paginate_path: 'page:num'
 words_per_minute: 200
+future: true
 
 extensions:
   mermaid_enable: true
@@ -87,7 +88,6 @@ plugins:
   - jekyll-paginate
   - jekyll-feed
   - jekyll-sitemap
-  - jekyll-archives
 
 include: [_pages]
 exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock", "package-lock.json", "assets/css/sass/"]

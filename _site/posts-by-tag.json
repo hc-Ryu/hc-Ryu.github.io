@@ -3,6 +3,26 @@
 [   
       
   {
+  "tag" : "Bible",
+  "posts" : [
+      
+      "./QT-Mattew28.html"
+      
+    ]
+  } ,
+    
+      
+  {
+  "tag" : "QT",
+  "posts" : [
+      
+      "./QT-Mattew28.html"
+      
+    ]
+  } ,
+    
+      
+  {
   "tag" : "artificial intelligence",
   "posts" : [
       
@@ -148,8 +168,6 @@
   "tag" : "quantum amplitude estimation",
   "posts" : [
       
-      "./quantum-inspired-genetic-algorithm.html",
-      
       "./qae2-cal-mean-and-var.html"
       
     ]
@@ -159,8 +177,6 @@
   {
   "tag" : "quantum computing",
   "posts" : [
-      
-      "./quantum-inspired-genetic-algorithm.html",
       
       "./qae2-cal-mean-and-var.html",
       
