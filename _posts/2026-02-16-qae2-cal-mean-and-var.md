@@ -6,7 +6,7 @@ title: "Quantum Amplitude Estimation 2; calculate mean and variance"
 date: 2026-02-16
 img: posts/20260114/quantum-computing.jpg
 tags: [quantum computing, quantum amplitude estimation]
-category: quantum information
+categories: [quantum information]
 author: Hoechang Ryu
 description: "How to calculate mean and variance by quantum computing?"
 mathjax: yes
