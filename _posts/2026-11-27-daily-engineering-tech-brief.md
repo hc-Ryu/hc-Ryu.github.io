@@ -2,200 +2,121 @@
 layout: post
 read_time: true
 show_date: true
-title: "데일리 엔지니어링 테크 브리프 — 2026-11-27"
-date: 2026-11-27
+title: "Daily Engineering Tech Brief: Nov 27, 2026"
+date: 2026-11-27 06:00:00 +0900
+description: "양자화학(VQE 계열), 신뢰성해석, 공학용 머신러닝, FE 대리모델 쪽에서 이번 주 눈에 띈 논문과 소식 정리."
 img: posts/20260114/quantum-computing.jpg
-tags: [daily brief, quantum computing, VQE, uncertainty quantification, active learning, Kriging, surrogate model, FEM, modal analysis, physics-informed]
+tags: [daily brief, quantum computing, VQE, reliability analysis, Kriging, surrogate model, FEM, modal analysis]
 categories: [daily brief]
 author: Hoechang Ryu
-description: "양자화학·UQ/신뢰성·공학 AI/ML·CAE 분야의 검증된 최신 동향과 연구 관련성 정리"
-mathjax: yes
 toc: yes
 ---
+<style>.header-page h1.page-title{font-size:2.4rem;line-height:1.25}@media only screen and (max-width:480px){.header-page h1.page-title{font-size:1.7rem}}</style>
 
-<style>
-  .header-page h1.page-title { font-size: 2.4rem; line-height: 1.25; }
-  @media only screen and (max-width: 480px) { .header-page h1.page-title { font-size: 1.7rem; } }
-  table.brief-table { width: 100%; border-collapse: collapse; border-left: 0; margin: 1rem 0 1.5rem; font-size: 0.95rem; }
-  table.brief-table th { background-color: var(--grey4); font-weight: 600; }
-  table.brief-table th, table.brief-table td { padding: 8px 12px; border-bottom: 1px solid var(--grey3); vertical-align: top; }
-  table.brief-table td { background-color: transparent; }
-  .brief-meta { background: var(--grey5); border-radius: 6px; padding: 10px 14px; font-size: 0.95rem; }
-</style>
+## 들어가며 {#intro}
 
-> 이번 호는 **첫 번째 브리핑(기준판)** 입니다. 이전 브리핑이 없으므로 모든 항목은 **신규**입니다. arXiv 항목은 모두 **동료심사를 거치지 않은 프리프린트**입니다. 사실관계는 arXiv 초록 페이지와 보도자료 수준에서 확인했고, 논문 전문은 읽지 않았습니다.
+요즘 꾸준히 따라가고 있는 분야는 크게 네 가지다. VQE 계열 양자화학 알고리즘(특히 HI-VQE와 gPCE를 엮는 작업), UQ와 신뢰성 기반 설계최적화, 공학용 머신러닝, 그리고 FE 해석과 대리모델이다. 매일 쏟아지는 arXiv 논문과 발표 자료 중에서 내 연구(DD-GPCE, HI-VQE-gPCE, 기계 시스템의 모달·접촉 해석)와 맞닿는 것만 골라 짧게 메모해 두려고 한다.
 
-## 한눈에 보기
+이번 주는 HI-VQE 자체에 대한 새 논문은 없었다. 대신 부분공간을 잘라낸 뒤 놓친 상관에너지를 섭동으로 되살리는 논문이 하나 나왔는데, HI-VQE-gPCE 후처리를 고민하던 차라 반가웠다. 신뢰성해석 쪽에서는 능동학습 Kriging이 파손모드를 놓쳤을 때 <i>P<sub>f</sub></i>를 얼마나 과소평가하는지 보여주는 논문이 제일 기억에 남는다.
 
-| 분야 | 항목 | 공개일 | 중요도 | 연구 관련성 |
-|---|---|---|---|---|
-| 양자화학 | SSPT: CS-VQE 부분공간 밖 상관에너지의 섭동 복원 | 11/17 (v2 11/23) | 중간 | **높음** |
-| 양자화학 | 제1양자화 화학 시뮬레이션 (sum-of-squares) | 11/18 | 중간 | 낮음 |
-| 양자컴퓨팅 | IBM·ORNL·AMD 양자오류정정 공동설계 플랫폼 | 11/5 발표 | 중간 | 낮음 |
-| UQ·신뢰성 | 능동학습 Kriging의 내부 최적화기 비교 | 11/3 | 중간 | **높음** |
-| 공학 AI/ML | 구조동역학용 물리내장 신경연산자 (Modal Rational) | 11/6 (v2 11/9) | 낮음–중간 | 중간–높음 |
-| CAE | 에너지 노름 기반 FE 응력 대리모델 | 11/11 | 중간 | **높음** |
-{: .brief-table}
+아래 논문은 모두 arXiv 프리프린트라 아직 심사를 거치지 않았다는 점은 감안해야 한다.
 
-**검증된 신규 소식을 찾지 못한 주제:** HI-VQE·HI-VQE-gPCE, 양자 gPCE 인코딩, DD-GPCE, score-form 대 Stein-form 민감도, VaR/CVaR 민감도, CAE 벤더·표준 발표.
+## 양자컴퓨팅 · 양자화학 {#quantum}
 
----
+### SSPT: 잘라낸 부분공간의 상관에너지를 섭동으로 복원 {#sspt}
 
-## 1. 양자컴퓨팅·양자화학
+<small>Yao, Liu, Li · arXiv:2611.22108 · 2026.11.17 공개, 11.23 v2 · <a href="https://doi.org/10.48550/arXiv.2611.22108">DOI</a> · <a href="https://arxiv.org/abs/2611.22108">원문</a></small>
 
-### 1.1 SSPT — 안정자 부분공간 상관의 섭동적 복원
+Contextual Subspace VQE(CS-VQE)는 안정자 사영으로 큐비트 수를 줄이는 대신, 남긴 부분공간 바깥 배치와의 해밀토니안 결합을 버린다. 저자들은 사영 과정에서 빠진 Pauli 항을 최적화된 기준상태에 대한 섭동으로 보고, 이 손실을 Stabilizer-Subspace Perturbation Theory(SSPT)로 되살린다. 보정 방식은 Epstein–Nesbet형 2차 보정과, 외부공간 안의 결합까지 유지하는 resolvent 방식 두 가지다. 기준상태가 인수분해된 형태라 행렬요소를 축소된 레지스터의 Pauli 기댓값만으로 구할 수 있고, 전체 파동함수를 다시 만들 필요가 없다는 점이 핵심이다. 저자들은 여러 분자에서 사영 오차가 크게 줄고, 일부는 더 적은 큐비트로 화학적 정밀도에 도달했다고 보고한다.
 
-<div class="brief-meta">
-프리프린트 · 공개 2026-11-17, 개정(v2) 2026-11-23 · 저자 Yao, Liu, Li<br>
-DOI <a href="https://doi.org/10.48550/arXiv.2611.22108">10.48550/arXiv.2611.22108</a> · <a href="https://arxiv.org/abs/2611.22108">원문</a>
-</div>
+익숙한 Epstein–Nesbet 형태로 쓰면 대략 이런 모양이다(논문의 정확한 식은 아니다).
 
-**무슨 일이 있었나 (확인된 사실)**
-- CS-VQE(Contextual Subspace VQE)는 안정자 사영으로 큐비트 수를 줄이지만, 남긴 부분공간 밖 배치와의 해밀토니안 결합을 버립니다.
-- SSPT는 제거된 Pauli 항을 최적화된 기준상태에 대한 섭동으로 보고 두 방식으로 보정합니다. 하나는 Epstein–Nesbet형 2차 보정이고, 다른 하나는 외부공간 내부 결합까지 유지하는 resolvent 방식입니다.
-- 기준상태가 인수분해된 형태여서, 필요한 행렬요소를 축소된 레지스터의 Pauli 기댓값만으로 얻습니다. 전체 파동함수를 재구성하지 않습니다.
-- *저자 보고:* 사영 오차가 크게 줄었고, 일부 분자는 더 적은 큐비트로 화학적 정밀도에 도달했습니다.
+<p style="text-align:center">\[ E^{(2)} = \sum_{k} \frac{\lvert \langle k \rvert V \lvert \psi_0 \rangle \rvert^{2}}{E_0 - \langle k \rvert H \lvert k \rangle} \]</p>
 
-**왜 중요한가 (해석)**
+여기서 <i>V</i>는 사영으로 제거된 항이다. HI-VQE는 selected-CI처럼 중요한 배치로 핵심공간을 만들고 고전적으로 대각화한다. SCI에서는 핵심공간 밖의 결합을 PT2로 보정하는 것이 거의 표준이니, HI-VQE-gPCE에서 부분공간 대각화 뒤에 붙일 후처리로 비슷한 보정을 시험해 볼 만하다. 결국 따져봐야 할 것은 측정 비용이다. SSPT가 요구하는 Pauli 기댓값 개수와 HI-VQE의 샘플링 비용을 같은 분자에서 비교해 보고 싶다.
 
-일반적인 Epstein–Nesbet 형태는 다음과 같습니다. 논문의 정확한 식은 확인하지 못했습니다.
+앞으로는 벤치마크 분자와 기저, 분모가 작아질 때 resolvent 방식이 얼마나 안정적인지, 측정 비용이 어떻게 스케일링되는지를 보려 한다.
 
-$$E^{(2)} = \sum_{k} \frac{\lvert \langle k \rvert V \lvert \psi_0 \rangle \rvert^2}{E_0 - \langle k \rvert H \lvert k \rangle}$$
+<small>중요도 중간 · 연구 관련성 높음 (부분공간 선택 이후 고전 후처리와 직접 연결)</small>
 
-여기서 $$V$$는 사영으로 제거된 항입니다. HI-VQE는 selected-CI처럼 핵심 배치공간을 만들고 고전적으로 대각화합니다. SCI에서 핵심공간 밖 결합을 PT2로 보정하는 것이 표준이므로, SSPT는 HI-VQE-gPCE의 부분공간 대각화 뒤에 붙일 후처리 보정과 개념적으로 가장 가깝습니다. 비교할 핵심 지표는 측정 비용, 즉 축소 레지스터의 Pauli 기댓값 수와 HI-VQE 샘플링 비용입니다.
+### 제1양자화 화학 시뮬레이션: sum-of-squares 표현 {#first-quantised}
 
-**다음에 볼 것:** 전문의 벤치마크 분자와 기저, 작은 분모 근처에서 resolvent 방식의 안정성, 측정 비용 스케일링, 심사 게재 여부.
+<small>Ivanov, Sünderhauf, Kunjummen, Blunt, Izsák · arXiv:2611.24885 · 2026.11.18 공개 · <a href="https://doi.org/10.48550/arXiv.2611.24885">DOI</a> · <a href="https://arxiv.org/abs/2611.24885">원문</a></small>
 
-**평가:** 중요도 **중간**(점진적 방법론, 프리프린트) · 연구 관련성 **높음**(부분공간 선택과 고전 후처리).
+일반 오비탈 기저에서 쓸 수 있는 제1양자화 위상추정 알고리즘이다. 비볼록 sum-of-squares 해밀토니안 표현과 spectral-gap amplification을 쓰고, 큐비트 수가 오비탈 수에 대해 로그로만 늘어난다. 저자들의 자원 추정에 따르면, 전자 4–24개에 오비탈이 전자 수의 5–14배인 분자 6종에서 논리큐비트가 수백 개 수준일 때 Toffoli 게이트가 제2양자화 방식보다 최대 16배 적다. 이 우위는 약 1,400 큐비트까지 이어지고, 최소 큐비트 수도 1.4–2배 낮다. 하드웨어 실험이 아니라 논리 수준의 추정치다.
 
-### 1.2 제1양자화 화학 시뮬레이션 — sum-of-squares 표현
+결함허용 양자컴퓨터를 전제로 한 방법이라 지금 하는 VQE 작업과는 거리가 있다. 다만 하이브리드 부분공간 방법이 장기적으로 어떤 기준선과 비교될지 감을 잡는 데는 도움이 된다.
 
-<div class="brief-meta">
-프리프린트 · 공개 2026-11-18 · 저자 Ivanov, Sünderhauf, Kunjummen, Blunt, Izsák<br>
-DOI <a href="https://doi.org/10.48550/arXiv.2611.24885">10.48550/arXiv.2611.24885</a> · <a href="https://arxiv.org/abs/2611.24885">원문</a>
-</div>
+<small>중요도 중간 · 연구 관련성 낮음</small>
 
-**무슨 일이 있었나**
-- 일반 오비탈 기저용 제1양자화 위상추정 알고리즘입니다. 비볼록 sum-of-squares 해밀토니안 표현과 spectral-gap amplification을 씁니다. 큐비트 수가 오비탈 수에 대해 로그로 증가합니다.
-- *저자 보고(하드웨어 실험이 아닌 자원 추정):* 전자 4–24개, 오비탈 수가 전자 수의 5–14배인 분자 6종에서, 논리큐비트 수백 개 영역 기준으로 Toffoli 게이트가 제2양자화 대비 최대 16배 적었습니다. 이 우위는 약 1,400 큐비트까지 유지되고, 최소 큐비트 수는 1.4–2배 낮았습니다.
+### IBM · ORNL · AMD 양자오류정정 공동설계 플랫폼 {#qec-platform}
 
-**왜 중요한가 (해석):** 결함허용 양자컴퓨터를 전제로 한 방법이라 근시일 VQE 계열은 아닙니다. 다만 HI-VQE 같은 하이브리드 부분공간 방법이 장기적으로 비교될 기준선을 보여줍니다.
+<small>보도자료 · 2026.11.05 발표 · <a href="https://hpcwire.com/off-the-wire/ornl-ibm-and-amd-launch-new-co-design-platform-for-quantum-error-correction">HPCwire 게재본</a></small>
 
-**다음에 볼 것:** 독립적인 컴파일 검증, 심사 게재.
+IBM Quantum Nighthawk(120 큐비트)를 ORNL의 Umbra(AMD Instinct MI355X GPU, EPYC CPU)와 묶은 QEC 연구 플랫폼이다. 연접 부호, 시공간 부호, 알고리즘 인지형 디코더를 다룰 계획이라고 한다. 보도자료에 나온 70 논리큐비트·438 연산은 IBM이 기존에 보고한 실험치이고, 이 플랫폼에서 나온 결과는 아니다. 100 논리큐비트로 100,000 연산을 돌리는 것은 2028년까지의 DOE 목표치다.
 
-**평가:** 중요도 **중간** · 연구 관련성 **낮음**(NISQ/VQE 아님).
+인프라 소식이라 당장 연구에 쓸 내용은 없다. 디코더 지연시간 같은 실제 수치가 나오면 다시 볼 생각이다.
 
-### 1.3 IBM·ORNL·AMD 양자오류정정 공동설계 플랫폼
+<small>중요도 중간 · 연구 관련성 낮음</small>
 
-<div class="brief-meta">
-공식 보도자료 · 발표 2026-11-05 · DOI 없음<br>
-<a href="https://hpcwire.com/off-the-wire/ornl-ibm-and-amd-launch-new-co-design-platform-for-quantum-error-correction">HPCwire 게재본</a> (IBM·ORNL 원문 페이지는 확인하지 못함)
-</div>
+## UQ · 신뢰성 · 설계최적화 {#uq}
 
-**무슨 일이 있었나**
-- *발표 내용:* IBM Quantum Nighthawk(120 큐비트)와 ORNL Umbra(AMD Instinct MI355X GPU, EPYC CPU)를 연결한 QEC 연구 플랫폼입니다. 연접 부호, 시공간 부호, 알고리즘 인지형 디코더를 다룰 계획입니다.
-- *벤더 보고·목표치:* IBM의 70 논리큐비트·438 hard operation 실험은 이 플랫폼의 결과가 아닙니다. DOE 목표는 2028년 말까지 100 논리큐비트로 100,000 연산을 수행하는 것입니다.
+### 능동학습 Kriging이 파손모드를 놓칠 때 {#ak-inner-optimizer}
 
-**왜 중요한가 (해석):** 디코딩을 위한 고전–양자 공동설계 인프라라는 신호이고, 화학이나 UQ 결과는 아닙니다.
+<small>W.-C. Yeh · arXiv:2611.03117 · 2026.11.03 공개 · <a href="https://doi.org/10.48550/arXiv.2611.03117">DOI</a> · <a href="https://arxiv.org/abs/2611.03117">원문</a></small>
 
-**다음에 볼 것:** 플랫폼에서 나오는 디코더 지연시간과 처리량 데이터.
+AK-MCS 계열에서 다음 샘플을 고를 때 후보풀 대신 연속 최적화기를 쓰는 경우가 많다. 이 논문은 대리모델, 모집단, 종료 규칙을 모두 고정하고, 예산을 맞춘 연속 최적화기 5종(스웜과 L-BFGS-B를 결합한 하이브리드 포함)을 후보풀 방식과 비교했다. 문제는 2–100차원 11종이다. 사전에 세운 가설은 지지되지 않았다. 후보풀 방식과 비교한 44번에서 하이브리드는 한 번도 이기지 못했다(0승 23무 21패).
 
-**평가:** 중요도 **중간** · 연구 관련성 **낮음**.
+더 눈에 띄는 결과는 따로 있다. 직렬 시스템 3종에서 multistart L-BFGS-B는 60번 중 59번 파손모드 하나를 끝내 학습하지 못했고, 미학습 모드가 있었던 198번 전부에서 파손확률이 과소추정됐다. 저자는 이 부분을 탐색적 결과라고 표시했다. 오차 기반 종료 기준이 참값의 0.38–0.89배인 추정치를 17번이나 그대로 통과시켰다는 점도 불편하다.
 
-> **찾지 못함:** 이번 주 검증된 HI-VQE·양자 gPCE 신규 자료는 없었습니다. 가장 최근 HI-VQE 항목인 arXiv:2601.06935는 2026년 1월 자료라 신규가 아닙니다.
+U 학습함수를 떠올리면 왜 그런지 이해가 된다.
 
----
+<p style="text-align:center">\[ U(\mathbf{x}) = \frac{\lvert \mu_G(\mathbf{x}) \rvert}{\sigma_G(\mathbf{x})} \]</p>
 
-## 2. UQ·신뢰성·설계최적화
+이 함수의 최소점 탐색이 떨어져 있는 파손영역에 한 번도 닿지 못하면, 대리모델은 그 영역을 안전하다고 확신한다. 그러면 <i>P<sub>f</sub></i>가 비보수적으로 나오는데도 대리모델의 오차지표로는 이를 알아챌 방법이 없다. 제약이 여러 개인 RBDO나, 대리모델로 VaR/CVaR 같은 꼬리 지표를 계산할 때도 똑같이 걸리는 문제다. 내가 쓰는 PCE/DD-GPCE 기반 능동학습에도 비슷한 맹점이 있는지 커버리지를 따로 점검해 봐야겠다.
 
-### 2.1 능동학습 Kriging 신뢰성해석의 내부 최적화기 비교
+<small>중요도 중간 (단독 저자, 일부 탐색적 결과) · 연구 관련성 높음</small>
 
-<div class="brief-meta">
-프리프린트 · 공개 2026-11-03 · 단독저자 W.-C. Yeh<br>
-DOI <a href="https://doi.org/10.48550/arXiv.2611.03117">10.48550/arXiv.2611.03117</a> · <a href="https://arxiv.org/abs/2611.03117">원문</a>
-</div>
+DD-GPCE, score-form과 Stein-form 민감도, VaR/CVaR 민감도 쪽에서는 이번 주에 새로 챙길 만한 논문을 찾지 못했다.
 
-**무슨 일이 있었나 (저자 보고)**
-- 대리모델, 모집단, 종료 규칙을 고정하고, 예산을 맞춘 연속 최적화기 5종(스웜과 L-BFGS-B 결합 하이브리드 포함)을 후보풀 방식과 비교했습니다. 문제는 2–100차원 11종입니다.
-- 사전 설정한 가설은 지지되지 않았습니다. 후보풀 방식 대비 하이브리드는 44회 비교에서 0승 23무 21패였습니다.
-- 직렬 시스템 3종에서 multistart L-BFGS-B는 60회 중 59회 failure mode 하나를 학습하지 못했습니다. 미학습 모드가 있던 198회 전부에서 파손확률이 과소추정됐습니다(탐색적 결과로 표기).
-- 오차 기반 종료 기준이 참값의 0.38–0.89배인 추정치 17건을 그대로 승인했습니다.
+## 공학용 머신러닝 {#ml}
 
-**왜 중요한가 (해석)**
+### 구조동역학용 물리내장 신경연산자 (Modal Rational) {#modal-rational}
 
-AK-MCS의 U 학습함수
+<small>Nasrollahi, Orak · arXiv:2611.07059 · 2026.11.06 공개, 11.09 v2 · <a href="https://doi.org/10.48550/arXiv.2611.07059">DOI</a> · <a href="https://arxiv.org/abs/2611.07059">원문</a></small>
 
-$$U(\mathbf{x}) = \frac{\lvert \mu_G(\mathbf{x}) \rvert}{\sigma_G(\mathbf{x})}$$
+구조 특징에서 응답을 바로 맞추는 대신 모달량(고유진동수, 감쇠 등)을 예측하고, 주파수응답은 해석적으로 다시 조립하는 방식이다(Modal Rational, MR). 여기에 PGMON과 MOSAIC가 진동수, 감쇠, 잔류유연도에 범위를 제한한 보정을 더한다. 80 m 강재 트러스 타워와 테이퍼 쉘 보에 대해 각각 20,000개 설계 집단을 만들었고, 평균 변위이력 오차는 타워 0.73–0.76%, 보 0.029–0.116%였다. 다만 비교 기준이 풀 FE 해가 아니라 대역제한 모달 해다.
 
-는 최소점 탐색이 모든 파손영역에 닿을 때만 의미가 있습니다. 분리된 파손영역을 놓치면 $$P_f$$가 자신 있게, 그러나 비보수적으로 틀리고, 대리모델 자체의 오차지표로는 이를 감지하지 못합니다. 여러 제약을 가진 RBDO나 대리모델로 계산한 VaR/CVaR 꼬리 지표에도 같은 맹점이 생겨 설계를 불가능 영역 쪽으로 밀 수 있습니다. PCE/DD-GPCE 기반 능동학습 루프에 같은 문제가 있는지는 이 논문에서 다루지 않았습니다.
+결국 이 대리모델은 아래 모달 합 구조를 그대로 유지한다.
 
-**다음에 볼 것:** 전문의 문제 세트, 재현 연구, PCE 계열 루프의 커버리지 진단.
+<p style="text-align:center">\[ H(\omega) = \sum_{j} \frac{\boldsymbol{\phi}_j \boldsymbol{\phi}_j^{T}}{\omega_j^{2} - \omega^{2} + 2 i \zeta_j \omega_j \omega} \]</p>
 
-**평가:** 중요도 **중간**(단독저자, 일부 탐색적) · 연구 관련성 **높음**(GP/Kriging 능동학습, 파손확률).
+설계가 바뀌어 공진점이 이동해도 고유쌍을 통해 따라가니, 응답곡선을 통째로 학습하는 것보다 물리적으로 납득이 간다. 저자들도 위상(topology)이 고정된 경우만 다뤘고 일반화나 계산 절감은 아직 보여주지 못했다고 쓰고 있다. 고유진동수에 대한 PCE/GP 대리모델과 비교해 보거나, 모드 순서가 바뀌는 경우에 어떻게 되는지 보고 싶다.
 
-> **찾지 못함:** DD-GPCE, score-form 대 Stein-form 민감도, VaR/CVaR 민감도에 대한 이번 주 검증된 신규 자료는 없었습니다.
+<small>중요도 낮음–중간 · 연구 관련성 중간–높음 (모달·고유치 대리모델)</small>
 
----
+## 공학 시뮬레이션 · CAE {#cae}
 
-## 3. 공학용 AI/ML
+### FE 응력 대리모델은 에너지 노름으로 학습하자 {#energy-norm}
 
-### 3.1 구조동역학 대리모델용 물리내장 신경연산자 (Modal Rational)
+<small>Cao, Song · arXiv:2611.14574 · 2026.11.11 공개 · <a href="https://doi.org/10.48550/arXiv.2611.14574">DOI</a> · <a href="https://arxiv.org/abs/2611.14574">원문</a></small>
 
-<div class="brief-meta">
-프리프린트 · 공개 2026-11-06, 개정(v2) 2026-11-09 · 저자 Nasrollahi, Orak<br>
-DOI <a href="https://doi.org/10.48550/arXiv.2611.07059">10.48550/arXiv.2611.07059</a> · <a href="https://arxiv.org/abs/2611.07059">원문</a>
-</div>
+구멍 뚫린 판과 공동이 있는 고체의 선형 탄성 문제에서, FE 대리모델의 손실을 변위 L2가 아니라 에너지 노름으로 바꾸기만 했는데 결과가 크게 달라졌다. 3D 트랜스포머의 중앙값 에너지노름 오차는 7.5배, von Mises 오차는 6.1배 줄었고, 2D에서도 von Mises 오차가 절반 이하로 떨어졌다. 강성행렬을 쓸 수 있으면 Ritz 사영이 최대응력을 뺀 모든 지표에서 라벨 없는 모델보다 나았고, 훨씬 조밀한 메쉬로는 어떤 네트워크도 잘 전이되지 않았다.
 
-**무슨 일이 있었나 (저자 보고)**
-- MR은 구조 특징을 모달량(고유진동수, 감쇠 등)으로 매핑한 뒤 주파수응답을 해석적으로 재구성합니다. PGMON과 MOSAIC는 진동수·감쇠·잔류유연도에 제한된 보정을 더합니다.
-- 80 m 강재 트러스 타워와 테이퍼 쉘 보에 대해 각각 20,000개 설계 집단을 만들었습니다. 평균 변위이력 오차는 타워 0.73–0.76%, 보 0.029–0.116%입니다. 단, 비교 기준은 대역제한 모달 해입니다.
+식으로 보면 당연한 결과이기도 하다. <i>K</i><b>u</b> = <b>f</b>, 포텐셜 에너지를 Π(<b>v</b>) = ½ <b>v</b><sup>T</sup><i>K</i><b>v</b> − <b>f</b><sup>T</sup><b>v</b>라 두면
 
-**왜 중요한가 (해석)**
+<p style="text-align:center">\[ \Pi(\hat{\mathbf{u}}) - \Pi(\mathbf{u}) = \tfrac{1}{2} (\hat{\mathbf{u}} - \mathbf{u})^{T} K (\hat{\mathbf{u}} - \mathbf{u}) = \tfrac{1}{2} \sum_{i} \lambda_i c_i^{2} \]</p>
 
-대리모델이 다음 모달 형태를 명시적으로 유지합니다(일반형, 제 정리).
+이고, 여기서 <i>c<sub>i</sub></i>는 오차를 고유모드로 전개한 계수다. 변위 L2 손실은 Σ<i>c<sub>i</sub></i><sup>2</sup>라서, 변형에너지를 대부분 담고 있는 강성 모드(큰 λ<sub>i</sub>)를 상대적으로 가볍게 본다. 응력 정확도가 곧 파손확률의 정확도로 이어지니, 대리모델 기반 신뢰성해석을 할 때 손실을 무엇으로 잡을지는 꼭 짚고 넘어가야 할 문제다. 접촉 문제는 변분부등식이라 그대로 확장되지는 않을 것 같은데, 이 부분은 직접 시험해 봐야 알 것 같다.
 
-$$H(\omega) = \sum_j \frac{\boldsymbol{\phi}_j \boldsymbol{\phi}_j^{T}}{\omega_j^2 - \omega^2 + 2 i \zeta_j \omega_j \omega}$$
+<small>중요도 중간 · 연구 관련성 높음 (FE 이산화와 대리모델 오차)</small>
 
-그래서 공진 이동을 원시 응답곡선이 아니라 고유쌍을 통해 예측합니다. 저자가 밝힌 한계는 고정 위상(topology)이라는 점, 그리고 일반화와 계산 절감이 입증되지 않았다는 점입니다. 기준해도 풀 FE가 아닙니다.
-
-**다음에 볼 것:** 고유진동수용 PCE/GP 대리모델과의 비교, 설계 변화에 따른 모드 추적(mode tracking).
-
-**평가:** 중요도 **낮음–중간** · 연구 관련성 **중간–높음**(모달/고유치 대리모델).
-
----
-
-## 4. 공학 시뮬레이션·CAE·계산역학
-
-### 4.1 에너지 노름으로 학습·평가하는 FE 응력 대리모델
-
-<div class="brief-meta">
-프리프린트 · 공개 2026-11-11 · 저자 Cao, Song<br>
-DOI <a href="https://doi.org/10.48550/arXiv.2611.14574">10.48550/arXiv.2611.14574</a> · <a href="https://arxiv.org/abs/2611.14574">원문</a>
-</div>
-
-**무슨 일이 있었나 (저자 보고)**
-- 대상은 구멍 뚫린 판과 공동이 있는 고체의 선형 탄성 정역학입니다.
-- 손실 노름만 바꿨는데 3D 트랜스포머의 중앙값 에너지노름 오차가 7.5배, von Mises 오차가 6.1배 줄었습니다. 2D에서는 von Mises 오차가 절반 이하가 됐습니다.
-- 강성행렬을 쓰는 Ritz 사영이 라벨 없는 모델보다 최대응력을 뺀 모든 지표에서 우수했습니다. 훨씬 조밀한 메쉬로는 어떤 네트워크도 잘 전이되지 않았습니다.
-
-**왜 중요한가 (해석)**
-
-$$K\mathbf{u} = \mathbf{f}$$이고 $$\Pi(\mathbf{v}) = \tfrac{1}{2}\mathbf{v}^{T}K\mathbf{v} - \mathbf{f}^{T}\mathbf{v}$$일 때 다음이 성립합니다.
-
-$$\Pi(\hat{\mathbf{u}}) - \Pi(\mathbf{u}) = \tfrac{1}{2}(\hat{\mathbf{u}} - \mathbf{u})^{T} K (\hat{\mathbf{u}} - \mathbf{u})$$
-
-고유기저로 오차를 $$\mathbf{e} = \sum_i c_i \boldsymbol{\phi}_i$$라고 쓰면 에너지 노름은 $$\sum_i \lambda_i c_i^2$$이고 L2 변위손실은 $$\sum_i c_i^2$$입니다. 따라서 L2 손실은 변형에너지 대부분을 담는 강성 모드를 과소 가중합니다. 응력 정확도가 파손확률 정확도로 이어지므로 대리모델 기반 신뢰성해석에서 손실 지표 선택이 중요합니다. 접촉(변분부등식)으로의 확장은 제 추론이며 논문의 결과가 아닙니다.
-
-**다음에 볼 것:** 비선형·접촉 문제로의 확장, 메쉬 전이, 하류 파손확률에 미치는 영향.
-
-**평가:** 중요도 **중간** · 연구 관련성 **높음**(FE 이산화, 대리모델 오차).
-
-> **찾지 못함:** 최근 2주간 검증된 주요 CAE 벤더·표준 발표는 없었습니다. Siemens Simcenter(2026-07-28)와 Ansys 2026 R1(3월)은 오래된 소식입니다.
-
----
-
-## 표기 기준
-
-- **확인된 사실:** 항목의 존재, 날짜, DOI, 서술된 방법론 (초록·보도자료 수준)
-- **저자·벤더 보고:** 본문의 모든 성능 수치
-- **해석:** DD-GPCE, HI-VQE-gPCE, RBDO, FEM과의 연결에 대한 서술
+CAE 소프트웨어 쪽은 최근 2주간 굵직한 발표가 없었다. Simcenter 2026 여름 릴리스(7월)와 Ansys 2026 R1(3월) 이후로는 조용한 편이다.
+
+## 다음 주에 볼 것 {#next}
+
+<ul>
+<li>SSPT 본문의 측정 비용 분석. HI-VQE 샘플링 비용과 같은 분자로 비교할 수 있을지 확인</li>
+<li>Kriging 미학습 파손모드 문제를 PCE 기반 능동학습에서도 재현할 수 있는지</li>
+<li>에너지 노름 손실이 비선형·접촉 문제까지 이어지는지에 대한 후속 연구</li>
+</ul>
