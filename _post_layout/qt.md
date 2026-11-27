@@ -13,7 +13,6 @@ mathjax: yes
 toc: yes
 ---
 
-QT
 <blockquote>
   <p>이 문구는 인용문구입니다.</p>
   <cite>— 출처 (예: 성경 구절)</cite>
